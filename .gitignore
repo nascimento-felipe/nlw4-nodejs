@@ -127,7 +127,4 @@ dist
 .history
 .ionide
 
-#### Testes database ####
-.sqlite
-
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node
