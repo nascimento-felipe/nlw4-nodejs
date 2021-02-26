@@ -8,7 +8,7 @@ A API consiste em um NPS (Net Promoter Score), ou seja, aquelas pesquisas de sat
 - [Nodemailer](https://nodemailer.com/about/),
 - [Express](https://expressjs.com/pt-br/)
 
-###### Essa foto é de um envio de email:
+#### * Essa foto é um envio de email:
 
 <h1 align="center">
 <img alt="Foto do projeto" title="#NextLevelWeek4" src="./ProjectPicture/nlw4.png"/>
