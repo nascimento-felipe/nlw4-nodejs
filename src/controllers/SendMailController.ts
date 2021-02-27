@@ -48,7 +48,7 @@ class SendMailController {
         if (surveyUserAlreadyExists) {
             variables.id = surveyUserAlreadyExists.id;
 
-            await SendMailService.execute(email, (await survey).title, variables, npsPath);
+            await SendMailService.execute(email, (await survey).title, variables, npsPath, "NPS <noreply@nps.com.br>");
             return response.json(surveyUserAlreadyExists);
         }
 

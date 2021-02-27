@@ -21,7 +21,7 @@ class SendMailService {
         });
     }
 
-    async execute(to: string, subject: string, variables: object, path: string) {
+    async execute(to: string, subject: string, variables: object, path: string, from: string) {
         const templateFileContent = fs.readFileSync(path).toString("utf8");
 
         const mailTemplateParse = handlebars.compile(templateFileContent);
@@ -31,7 +31,7 @@ class SendMailService {
             to,
             subject,
             html: html,
-            from: "NPS <noreply@nps.com.br>"
+            from: from
         })
 
         console.log('Message sent: %s', message.messageId);
