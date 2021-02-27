@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { AnswerController } from './src/controllers/AnswerController';
+import { ForgotPassword } from './src/controllers/ForgotPasswordMailController';
 import { NpsController } from './src/controllers/NpsController';
 import { SendMailController } from './src/controllers/SendMailController';
 import { SurveysController } from './src/controllers/SurveysController';
@@ -11,6 +12,7 @@ const surveyController = new SurveysController();
 const sendMailController = new SendMailController();
 const answerController = new AnswerController();
 const npsController = new NpsController();
+const forgotPasswordController = new ForgotPassword();
 
 router.post("/users", userController.create);
 
@@ -23,4 +25,5 @@ router.get("/answers/:value", answerController.execute);
 
 router.get("/nps/:survey_id", npsController.execute);
 
+router.post("/forgotpw", forgotPasswordController.execute)
 export { router };
