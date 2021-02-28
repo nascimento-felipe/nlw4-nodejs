@@ -19,12 +19,22 @@ class SurveysController {
         return response.status(201).json(survey);
     }
 
-    async show(request: Request, response: Response) {
+    async showAll(request: Request, response: Response) {
         const surveysRepository = getCustomRepository(SurveyRepository);
 
         const all = await surveysRepository.find();
 
         return response.json(all);
+    }
+
+    async showOne(request: Request, response: Response) {
+        const { title } = request.params;
+
+        const surveysRepository = getCustomRepository(SurveyRepository);
+
+        const survey = await surveysRepository.findOne({ title });
+
+        return response.json(survey.id);
     }
 }
 

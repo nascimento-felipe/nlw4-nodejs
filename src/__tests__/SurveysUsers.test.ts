@@ -20,10 +20,10 @@ describe("SurveyUser", () => {
         await request(app).post("/surveys")
             .send({
                 title: "teste",
-                description: "teste 2"
+                description: "teste"
             });
 
-        const survey = await request(app).get("surveys");
+        const survey = await request(app).get("/surveys/teste");
 
         await request(app).post("/users")
             .send({
@@ -34,7 +34,7 @@ describe("SurveyUser", () => {
         const response = await request(app).post("/sendMail")
             .send({
                 email: "usuario@email.com",
-                survey_id: survey,
+                survey_id: survey.body.id
             })
 
         expect(response.status).toBe(200);

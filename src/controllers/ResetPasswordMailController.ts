@@ -5,7 +5,7 @@ import { UserRepository } from "../repositories/UsersRepository";
 import SendMailService from "../services/SendMailService";
 import { resolve } from 'path';
 
-class ForgotPassword {
+class ResetPassword {
     async execute(request: Request, response: Response) {
         const { email } = request.body;
         const usersRepository = getCustomRepository(UserRepository);
@@ -20,10 +20,10 @@ class ForgotPassword {
         const variable = {
             name: user.name
         }
-        await SendMailService.execute(email, 'Forgot password', variable, npsPath, "carros eletrizados <noreply@eletrizados.com.br>")
+        await SendMailService.execute(email, 'Reset password', variable, npsPath, "carros eletrizados <noreply@eletrizados.com.br>")
 
         return response.json(user);
     }
 };
 
-export { ForgotPassword };
+export { ResetPassword };

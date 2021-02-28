@@ -62,7 +62,7 @@ class SendMailController {
 
         await surveysUsersRepository.save(surveyUser);
 
-        await SendMailService.execute(email, (await survey).title, variables, npsPath);
+        await SendMailService.execute(email, (await survey).title, variables, npsPath, "NPS <noreply@nps.com.br>");
 
         return response.json(surveyUser);
     }
