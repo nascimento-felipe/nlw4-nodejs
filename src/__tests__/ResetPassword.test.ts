@@ -1,8 +1,10 @@
 import request from 'supertest';
-import { createConnection, getConnection } from "typeorm"
+import { getConnection } from 'typeorm';
 import { app } from '../app';
 
-describe("ResetPaswword", () => {
+import createConnection from '../database';
+
+describe("ResetPassword", () => {
     beforeAll(async () => {
         const connection = await createConnection();
         await connection.runMigrations();
@@ -26,7 +28,7 @@ describe("ResetPaswword", () => {
         const response = await request(app).post("/resetpw")
             .send({
                 email: "email@teste.com.br"
-            })
+            });
 
         expect(response.status).toBe(200);
     })

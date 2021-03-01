@@ -18,7 +18,6 @@ router.post("/users", userController.create);
 
 router.post("/surveys", surveyController.create);
 router.get("/surveys", surveyController.showAll);
-router.get("/route/:value", surveyController.showOne);
 
 router.post("/sendMail", sendMailController.execute);
 
