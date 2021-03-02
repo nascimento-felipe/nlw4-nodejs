@@ -3,6 +3,8 @@ import { v4 as uuid } from 'uuid';
 import { Survey } from "./Survey";
 import { User } from "./User";
 
+// criação do modelo de pesquisas_usuários, onde é necessário ter o id do usuário e o id da pesquisa.
+// esses IDs vem das tabelas deles próprios.
 @Entity("surveys_users")
 class SurveyUser {
 

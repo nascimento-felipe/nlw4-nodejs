@@ -1,6 +1,8 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from 'uuid';
 
+// criação de um modelo de pesquisa, com todos os campos necessários para criar a pesquisa.
+// o id não é criado pelo BD, mas sim pela biblioteca uuid, usada pra criar (adivinha?): *** UUID ***
 @Entity("surveys")
 class Survey {
 
