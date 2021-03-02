@@ -14,6 +14,7 @@ const answerController = new AnswerController();
 const npsController = new NpsController();
 const resetPasswordController = new ResetPassword();
 
+// rotas que podem ser usadas
 router.post("/users", userController.create);
 
 router.post("/surveys", surveyController.create);
